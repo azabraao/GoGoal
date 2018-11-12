@@ -1,0 +1,102 @@
+:root{
+    --cloud-color:hsl(0, 0%, 97%);
+}
+.background{
+    position: fixed;
+    background: linear-gradient(112deg,#000000,#1616bf);
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    opacity: 0.9;
+}
+.cloud{
+    animation-name: cloud-movement;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    left: 140px;
+    height: 40vh;
+    width: 40vh;
+}
+@keyframes cloud-movement{
+    50%{
+        left: 150px;
+    }
+    100%{
+        left: 140px;
+    }
+}
+.cloud,.cloud::after,.cloud::before{
+    position: absolute;
+    border-radius: 50% 50% 0% 0%;
+    content: "";
+    background-color: var(--cloud-color);
+    bottom: 0;
+}
+.cloud::before{
+    height: 30vh;
+    width: 30vh;
+    left: -120px;
+    border-bottom-left-radius: 50%;
+}
+.cloud::after{
+    border-radius: 50% 50% 50% 0%;
+    left: 200px;
+    height: 25vh;
+    width: 25vh;
+}
+
+.star{
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 1.5vh;
+    height: 1.5vh;
+    animation-name: star-blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.star-one{
+    left: 150px;
+    top: 150px;
+}
+.star-two{
+    left: 250px;
+    top: 220px;
+}
+.star-three{
+    left: 170px;
+    top: 250px;
+}
+.star-four{
+    left: 270px;
+    top: 300px;
+}
+.star-five{
+    left: 300px;
+    top: 100px;
+}
+@keyframes star-blink{
+    50%{
+        opacity: 0.6;
+    }
+}
+
+.rocket{
+    transform: rotate(59deg);
+    width: 40vh;
+    position: absolute;
+    animation-name: rocket-flying;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rocket-flying{
+    0%{
+        bottom: -100px;
+        left: 20%;
+    }
+    100%{
+        bottom: 50%;
+        left: 100%;
+    }
+}
